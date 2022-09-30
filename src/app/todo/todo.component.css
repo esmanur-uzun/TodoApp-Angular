@@ -1,0 +1,18 @@
+.header{
+    color: #EEEEEE;
+    background-color: #D65A31;
+}
+.btn{
+    background-color: #D65A31 !important;
+    color: #EEEEEE;
+}
+.list-group{
+    background-color: #EEEEEE;
+}
+ul li{
+    text-align: left;
+}
+
+.form-check{
+    color: #EEEEEE;
+}
