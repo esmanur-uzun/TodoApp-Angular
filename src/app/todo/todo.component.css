@@ -16,3 +16,7 @@ ul li{
 .form-check{
     color: #EEEEEE;
 }
+.delete{
+    background-color: #ae2012 !important;
+    padding: 5px !important;
+}

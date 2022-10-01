@@ -4,18 +4,35 @@
             <div class="header p-2 mb-2"><h3>Todo List</h3></div>
             <div class="input-group ">
                 <input type="text" class="form-control" placeholder="Enter a todo" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                <button (click)="addItem()" class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
             </div>
             <div class="form-check mt-3 d-flex justify-content-start">
                 <input type="checkbox" class="form-check-input" id="displayAll">
                 <label for="displayAll" class="form-check-label ms-2">Show all</label>
             </div>
             <ul class="list-group mt-4">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
+                <li class="list-group-item d-flex justify-content-between">An item
+                    <div>
+                        <input type="checkbox" class="form-check-input" id="displayAll">
+                        <button class="btn ms-2 delete">sil</button>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">A second item
+                    <input type="checkbox" class="form-check-input" id="displayAll">
+
+                </li>
+                <li class="list-group-item d-flex justify-content-between">A third item
+                    <input type="checkbox" class="form-check-input" id="displayAll">
+
+                </li>
+                <li class="list-group-item d-flex justify-content-between">A fourth item
+                    <input type="checkbox" class="form-check-input" id="displayAll">
+
+                </li>
+                <li class="list-group-item d-flex justify-content-between">And a fifth one
+                    <input type="checkbox" class="form-check-input" id="displayAll">
+
+                </li>
               </ul>
         </div>
         
