@@ -3,17 +3,14 @@
         <div class="col-5 mx-auto  text-center  ">
             <div class="header p-2 mb-2"><h3>Todo List</h3></div>
             <div class="input-group ">
-                <input type="text" class="form-control" placeholder="Enter a todo" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button (click)="addItem()" class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                <input [(ngModel)]="newTodo" (keyup.enter)="saveTodo()" type="text" class="form-control" placeholder="Enter a todo" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button (click)="saveTodo()"  class="btn btn-outline-secondary" type="button" id="button-addon2">Add</button>
             </div>
-            <div class="form-check mt-3 d-flex justify-content-start">
-                <input type="checkbox" class="form-check-input" id="displayAll">
-                <label for="displayAll" class="form-check-label ms-2">Show all</label>
-            </div>
+          
             <ul class="list-group mt-4">
-                <li class="list-group-item d-flex justify-content-between">An item
+                <li *ngFor="let todo of todos"  class="list-group-item d-flex justify-content-between" [class]="todo.isCompleted">{{todo.name}}
                     <div>
-                        <input type="checkbox" class="form-check-input" id="displayAll">
+                        <button  class="btn">check</button>
                         <button class="btn ms-2 delete">sil</button>
                     </div>
                 </li>
