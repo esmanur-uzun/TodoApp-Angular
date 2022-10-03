@@ -8,29 +8,15 @@
             </div>
           
             <ul class="list-group mt-4">
-                <li *ngFor="let todo of todos"  class="list-group-item d-flex justify-content-between" [class]="todo.isCompleted">{{todo.name}}
+                <li *ngFor="let todo of todos;let i = index"  class="list-group-item d-flex justify-content-between" [class.done]="!todo.isCompleted">{{todo.name}}
                     <div>
-                        <button  class="btn">check</button>
-                        <button class="btn ms-2 delete">sil</button>
+                        <button (click)="done(i)"  class="btn check">check</button>
+                        <button class="btn ms-2 delete" (click)="remove(i)">delete</button>
                     </div>
                 </li>
-                <li class="list-group-item d-flex justify-content-between">A second item
-                    <input type="checkbox" class="form-check-input" id="displayAll">
-
-                </li>
-                <li class="list-group-item d-flex justify-content-between">A third item
-                    <input type="checkbox" class="form-check-input" id="displayAll">
-
-                </li>
-                <li class="list-group-item d-flex justify-content-between">A fourth item
-                    <input type="checkbox" class="form-check-input" id="displayAll">
-
-                </li>
-                <li class="list-group-item d-flex justify-content-between">And a fifth one
-                    <input type="checkbox" class="form-check-input" id="displayAll">
-
-                </li>
               </ul>
+            
+              <button class="btn delete col-lg-5 mt-5" *ngIf="getItems().length > 0" (click)="clearAll()">Clear All</button>
         </div>
         
     </div>

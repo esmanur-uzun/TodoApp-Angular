@@ -20,3 +20,10 @@ ul li{
     background-color: #ae2012 !important;
     padding: 5px !important;
 }
+.check{
+    background-color: rgba(3, 115, 3, 0.759) !important;
+    padding: 5px !important;
+}
+.done{
+    text-decoration: line-through !important;
+}
