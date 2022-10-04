@@ -13,7 +13,10 @@ export class TodoComponent{
   constructor(){
     this.todos = this.getItemFromLS()
   }
-
+  setLS(){
+    localStorage.removeItem("todos")
+    localStorage.setItem("todos", JSON.stringify(this.todos))
+  }
   saveTodo(){
     if(this.newTodo){
       let todo = new Todo()
@@ -23,7 +26,7 @@ export class TodoComponent{
       
       this.todos = this.getItemFromLS()
       this.todos.push(todo)
-      localStorage.setItem("todos", JSON.stringify(this.todos))
+      this.setLS()
 
       this.newTodo = ""
     }
@@ -34,21 +37,17 @@ export class TodoComponent{
 
   done(id:number){
     this.todos[id].isCompleted = !this.todos[id].isCompleted
-    localStorage.setItem("todos", JSON.stringify(this.todos))
+    this.setLS()
   }
 
   remove(id:number){
     this.todos = this.todos.filter((v,i) => i !== id )
-    localStorage.setItem("todos", JSON.stringify(this.todos))
-  }
-  
-  getItems(){
-    return this.todos
+    this.setLS()
   }
 
   clearAll(){
     this.todos= []
-    localStorage.setItem("todos", JSON.stringify(this.todos))
+    localStorage.removeItem("todos")
   }
   getItemFromLS(){
    
